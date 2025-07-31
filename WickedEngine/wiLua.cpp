@@ -105,12 +105,13 @@ namespace wi::lua
 			"	success, co = Internal_runProcess(script_file(), script_pid(), func);"
 			"	return success, co;"
 			"end;"
+			"if _ENV = _ENV or {}"
 			"if _ENV.PROCESSES_DATA[script_pid()] == nil then"
-			"	_ENV.PROCESSES_DATA[script_pid()] = { _INITIALIZED = -1 };"
+			"	_ENV.PROCESSES_DATA[script_pid()] = { _INITIALIZED = -1 }"
 			"end;"
 			"if _ENV.PROCESSES_DATA[script_pid()]._INITIALIZED < 1 then"
-			"	_ENV.PROCESSES_DATA[script_pid()]._INITIALIZED = _ENV.PROCESSES_DATA[script_pid()]._INITIALIZED + 1;"
-			"end;";
+			"	_ENV.PROCESSES_DATA[script_pid()]._INITIALIZED = _ENV.PROCESSES_DATA[script_pid()]._INITIALIZED + 1"
+			"end";
 
 		// Make sure the file path doesn't contain backslash characters, replace them with forward slash.
 		//	- backslash would be recognized by lua as escape character
@@ -316,7 +317,7 @@ namespace wi::lua
 		TrailRenderer_BindLua::Bind();
 		Async_BindLua::Bind();
 
-		wilog("wi::lua Initialized [Lua %s.%s.%s] (%d ms)", LUA_VERSION_MAJOR, LUA_VERSION_MINOR, LUA_VERSION_RELEASE, (int)std::round(timer.elapsed()));
+		wilog("wi::lua Initialized [LuaJIT %s.%s.%s] (%d ms)", LUA_VERSION_MAJOR, LUA_VERSION_MINOR, LUA_VERSION_RELEASE, (int)std::round(timer.elapsed()));
 	}
 
 	lua_State* GetLuaState()
@@ -673,7 +674,7 @@ namespace wi::lua
 			return false;
 		}
 		dst.clear();
-		if(lua_dump(lua_internal().m_luaState, writer, &dst, 0) != LUA_OK)
+		if(lua_dump(lua_internal().m_luaState, writer, &dst) != LUA_OK)
 		{
 			PostErrorMsg();
 			lua_pop(lua_internal().m_luaState, 1); // lua_dump does not pop the dumped function from stack

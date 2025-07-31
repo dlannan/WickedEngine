@@ -60,84 +60,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lapi.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lauxlib.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lcode.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lctype.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ldebug.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ldo.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lfunc.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lgc.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\llex.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\llimits.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lmem.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lobject.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lopcodes.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lparser.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lprefix.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lstate.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lstring.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ltable.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ltm.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.hpp">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luaconf.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lualib.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lundump.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lvm.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lzio.h">
-      <Filter>LUA</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)wiVersion.h">
       <Filter>ENGINE</Filter>
     </ClInclude>
@@ -1398,113 +1320,29 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility\win32ico.h">
       <Filter>UTILITY</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ljumptab.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lauxlib.h">
       <Filter>LUA</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lopnames.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.hpp">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luaconf.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luajit.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luajit_rolling.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lualib.h">
       <Filter>LUA</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lapi.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lauxlib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lbaselib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lcode.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lcorolib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lctype.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldblib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldebug.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldo.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldump.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lfunc.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lgc.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\linit.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\liolib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\llex.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lmathlib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lmem.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\loadlib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lobject.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lopcodes.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\loslib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lparser.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lstate.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lstring.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lstrlib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ltable.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ltablib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ltm.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lua.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lundump.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lutf8lib.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lvm.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lzio.c">
-      <Filter>LUA</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)wiVersion.cpp">
       <Filter>ENGINE</Filter>
     </ClCompile>

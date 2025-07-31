@@ -88,11 +88,11 @@
     </ProjectReference>
     <Lib>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)WickedEngine\LUA\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua51.lib;luajit.lib</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>cd LUA &amp;&amp; msvcbuild.bat static</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -123,12 +123,12 @@
       <ShaderModel>5.0</ShaderModel>
     </FxCompile>
     <Lib>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)WickedEngine\LUA\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+      <AdditionalDependencies>lua51.lib;luajit.lib</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>cd LUA &amp;&amp; msvcbuild.bat static</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

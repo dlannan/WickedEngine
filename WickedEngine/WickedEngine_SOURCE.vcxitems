@@ -308,8 +308,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Jolt\TriangleSplitter\TriangleSplitter.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Jolt\TriangleSplitter\TriangleSplitterBinning.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Jolt\TriangleSplitter\TriangleSplitterMean.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ljumptab.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lopnames.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lauxlib.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luaconf.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luajit.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luajit_rolling.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lualib.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility\dds.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility\dxva.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Utility\h264.h" />
@@ -371,32 +376,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)wiPrimitive.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)wiLoadingScreen.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)wiLoadingScreen_BindLua.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lapi.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lauxlib.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lcode.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lctype.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ldebug.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ldo.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lfunc.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lgc.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\llex.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\llimits.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lmem.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lobject.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lopcodes.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lparser.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lprefix.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lstate.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lstring.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ltable.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\ltm.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lua.hpp" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\luaconf.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lualib.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lundump.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lvm.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LUA\lzio.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)wiApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)wiApplication_BindLua.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)wiRenderPath2D.h" />
@@ -658,105 +637,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)wiGraphicsDevice_Vulkan.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)wiLoadingScreen.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)wiLoadingScreen_BindLua.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lapi.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lauxlib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lbaselib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lcode.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lcorolib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lctype.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldblib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldebug.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldo.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ldump.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lfunc.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lgc.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\linit.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\liolib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\llex.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lmathlib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lmem.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\loadlib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lobject.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lopcodes.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\loslib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lparser.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lstate.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lstring.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lstrlib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ltable.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ltablib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\ltm.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lua.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lundump.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lutf8lib.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lvm.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LUA\lzio.c">
-      <CompileAsWinRT>false</CompileAsWinRT>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)wiApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)wiApplication_BindLua.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)wiRenderPath2D.cpp" />
