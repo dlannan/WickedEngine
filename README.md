@@ -1,5 +1,3 @@
-<img align="left" src="Content/logo_small.png" width="180px"/>
-
 # Wicked Engine - LuaJIT
 
 This is a fork of the quite amazing WickedEngine. However I wanted to extend it to be able to use LuaJIT. This is for two main reasons:
@@ -7,6 +5,8 @@ This is a fork of the quite amazing WickedEngine. However I wanted to extend it 
 - Luajit has three amazing builtin libs: ffi, coro, and bit. These are extremely powerful.
 
 Ive been using Luajit professionally for some time now, and this seems like a brilliant way to leverage the WickedEngine.
+
+<img align="left" src="Content/logo_small.png" width="180px"/>
 
 # Wicked Engine
 
