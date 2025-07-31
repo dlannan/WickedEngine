@@ -92,7 +92,8 @@
       <AdditionalDependencies>lua51.lib;luajit.lib</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>cd LUA &amp;&amp; msvcbuild.bat static</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,7 +129,8 @@
       <AdditionalDependencies>lua51.lib;luajit.lib</AdditionalDependencies>
     </Lib>
     <PreBuildEvent>
-      <Command>cd LUA &amp;&amp; msvcbuild.bat static</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

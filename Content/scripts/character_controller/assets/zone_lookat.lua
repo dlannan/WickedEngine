@@ -25,5 +25,5 @@ if zone_transform ~= nil then
     else
         str = str .. "...but no one is looking at this currently."
     end
-    DrawDebugText(str, vector.Add(zone_pos, Vector(0,1,0)), Vector(1,1,1,1), 0.1, DEBUG_TEXT_DEPTH_TEST | DEBUG_TEXT_CAMERA_FACING)
+    DrawDebugText(str, vector.Add(zone_pos, Vector(0,1,0)), Vector(1,1,1,1), 0.1, bit.bor(DEBUG_TEXT_DEPTH_TEST, DEBUG_TEXT_CAMERA_FACING))
 end

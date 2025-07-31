@@ -38,8 +38,8 @@ conversation = Conversation() -- conversation will be accessible from dialog scr
 local scene = GetScene()
 
 local Layers = {
-	Player = 1 << 0,
-	NPC = 1 << 1,
+	Player = bit.lshift( 1, 0 ),
+	NPC = bit.lshift( 1, 1 ),
 }
 
 -- Simple character states
@@ -100,7 +100,7 @@ local function Character(model_scene, start_transform, controllable, anim_scene,
 		run_speed = 0.4,
 		jump_speed = 8,
 		swim_speed = 0.2,
-		layerMask = ~0, -- layerMask will be used to filter collisions
+		layerMask = bit.bnot(0), -- layerMask will be used to filter collisions
 		scale = Vector(1, 1, 1),
 		rotation = Vector(0,math.pi,0),
 		position = Vector(),
@@ -359,7 +359,7 @@ local function Character(model_scene, start_transform, controllable, anim_scene,
 							
 							if blocked then
 								if debug then
-									DrawDebugText("patrol blocked", vector.Add(capsule.GetTip(), Vector(0,0.1)), Vector(1,0,0,1), 0.08, DEBUG_TEXT_DEPTH_TEST | DEBUG_TEXT_CAMERA_FACING)
+									DrawDebugText("patrol blocked", vector.Add(capsule.GetTip(), Vector(0,0.1)), Vector(1,0,0,1), 0.08, bit.bor(DEBUG_TEXT_DEPTH_TEST, DEBUG_TEXT_CAMERA_FACING))
 									DrawCapsule(capsule, Vector(1,0,0,1))
 								end
 							else
@@ -370,7 +370,7 @@ local function Character(model_scene, start_transform, controllable, anim_scene,
 								end
 								self:MoveDirection(patrol_vec)
 								if debug then
-									DrawDebugText("patrol blocking check", vector.Add(capsule.GetTip(), Vector(0,0.1)), Vector(0,1,0,1), 0.08, DEBUG_TEXT_DEPTH_TEST | DEBUG_TEXT_CAMERA_FACING)
+									DrawDebugText("patrol blocking check", vector.Add(capsule.GetTip(), Vector(0,0.1)), Vector(0,1,0,1), 0.08, bit.bor(DEBUG_TEXT_DEPTH_TEST, DEBUG_TEXT_CAMERA_FACING))
 									DrawCapsule(capsule, Vector(0,1,0,1))
 								end
 							end
@@ -433,7 +433,7 @@ local function Character(model_scene, start_transform, controllable, anim_scene,
 					material.SetTexture(TextureSlot.BASECOLORMAP, footprint_texture)
 					material.SetBaseColor(Vector(0.1,0.1,0.1,1))
 					decal.SetSlopeBlendPower(2)
-					layer.SetLayerMask(~(Layers.Player | Layers.NPC))
+					layer.SetLayerMask(bit.bnot(bit.bor(Layers.Player, Layers.NPC)))
 					scene.Component_Attach(entity, collEntity)
 					table.insert(footprints, entity)
 				end
@@ -461,7 +461,7 @@ local function Character(model_scene, start_transform, controllable, anim_scene,
 					material.SetTexMulAdd(Vector(-1, 1, 0, 0)) -- flip left footprint texture to be right
 					material.SetBaseColor(Vector(0.1,0.1,0.1,1))
 					decal.SetSlopeBlendPower(2)
-					layer.SetLayerMask(~(Layers.Player | Layers.NPC))
+					layer.SetLayerMask(bit.bnot(bit.bor(Layers.Player, Layers.NPC)))
 					scene.Component_Attach(entity, collEntity)
 					table.insert(footprints, entity)
 				end
@@ -619,7 +619,7 @@ local ResolveCharacters = function(characterA, characterB)
 					conversation:Enter(characterA)
 					application.CrossFade(0.5)
 				end
-				DrawDebugText("", vector.Add(headA, Vector(0,0.4)), Vector(1,1,1,1), 0.1, DEBUG_TEXT_DEPTH_TEST | DEBUG_TEXT_CAMERA_FACING)
+				DrawDebugText("", vector.Add(headA, Vector(0,0.4)), Vector(1,1,1,1), 0.1, bit.bor(DEBUG_TEXT_DEPTH_TEST, DEBUG_TEXT_CAMERA_FACING))
 			end
 		end
 
@@ -741,8 +741,8 @@ local function ThirdPersonCamera(character)
 
 				local ray = Ray(targetPos, target_to_corner.Normalize(), TMin, TMax)
 
-				local collision_layer =  ~(Layers.Player | Layers.NPC) -- specifies that neither NPC, nor Player can collide with camera
-				local collObj,collPos,collNor = scene.Intersects(ray, FILTER_NAVIGATION_MESH | FILTER_COLLIDER,  collision_layer)
+				local collision_layer =  bit.bnot(bit.bor(Layers.Player, Layers.NPC)) -- specifies that neither NPC, nor Player can collide with camera
+				local collObj,collPos,collNor = scene.Intersects(ray, bit.bor(FILTER_NAVIGATION_MESH, FILTER_COLLIDER),  collision_layer)
 				if(collObj ~= INVALID_ENTITY) then
 					-- It hit something, see if it is between the player and camera:
 					local collDiff = vector.Subtract(collPos, targetPos)
@@ -848,7 +848,7 @@ runProcess(function()
     if len(scene.Component_GetVoxelGridArray()) > 0 then
         voxelgrid = scene.Component_GetVoxelGridArray()[1] -- take existing voxel grid from scene if available
     else
-        scene.VoxelizeScene(voxelgrid, false, FILTER_NAVIGATION_MESH | FILTER_COLLIDER, ~(Layers.Player | Layers.NPC)) -- generate a voxel grid in code, player and NPCs not included
+        scene.VoxelizeScene(voxelgrid, false, bit.bor(FILTER_NAVIGATION_MESH, FILTER_COLLIDER), bit.bnot(bit.bor(Layers.Player, Layers.NPC))) -- generate a voxel grid in code, player and NPCs not included
     end
 	
 	-- Create characters from scene metadata components:
@@ -975,7 +975,7 @@ runProcess(function()
 
 		if dynamic_voxelization then
 			voxelgrid.ClearData()
-			scene.VoxelizeScene(voxelgrid, false, FILTER_NAVIGATION_MESH | FILTER_COLLIDER, ~(Layers.Player | Layers.NPC)) -- player and npc layers not included in voxelization
+			scene.VoxelizeScene(voxelgrid, false, bit.bor(FILTER_NAVIGATION_MESH, FILTER_COLLIDER), bit.bnot(bit.bor(Layers.Player, Layers.NPC))) -- player and npc layers not included in voxelization
 		end
 
 		render() -- Camera update below will be happening after render phase is signaled, after update phase ended (this helps camera jitter as it will use the latest scene.Update() transforms doen by engine system)
@@ -1018,7 +1018,7 @@ runProcess(function()
 			DrawCapsule(capsule)
 
 			local str = "State: " .. player.state .. "\n"
-			DrawDebugText(str, vector.Add(capsule.GetBase(), Vector(0,0.4)), Vector(1,1,1,1), 1, DEBUG_TEXT_CAMERA_FACING | DEBUG_TEXT_CAMERA_SCALING)
+			DrawDebugText(str, vector.Add(capsule.GetBase(), Vector(0,0.4)), Vector(1,1,1,1), 1, bit.bor(DEBUG_TEXT_CAMERA_FACING, DEBUG_TEXT_CAMERA_SCALING))
 
 			DrawVoxelGrid(voxelgrid)
 

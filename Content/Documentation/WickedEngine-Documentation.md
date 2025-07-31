@@ -482,9 +482,9 @@ Below you will find the structures that make up the scene. These are intended to
 enum FLAGS
 {
 	EMPTY = 0, // always have empty as first flag (value of zero)
-	RENDERABLE = 1 << 0,
-	DOUBLE_SIDED = 1 << 1,
-	DYNAMIC = 1 << 2,
+	RENDERABLE = bit.lshift(1, 0),
+	DOUBLE_SIDED = bit.lshift(1, 1),
+	DYNAMIC = bit.lshift(1, 2),
 };
 uint32_t _flags = EMPTY; // default value is usually EMPTY, indicating that no flags are set
 

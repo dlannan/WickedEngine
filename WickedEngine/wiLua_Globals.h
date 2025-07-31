@@ -71,7 +71,6 @@ function wakeUpWaitingThreads(deltaTime)
         WAITING_ON_TIME[co] = nil -- Setting a field to nil removes it from the table
         local success, errorMsg = coroutine.resume(co)
 		if not success then
-            error("[Lua Error] "..debug.traceback())
 			error("[Lua Error] "..errorMsg)
 		end
     end
@@ -82,7 +81,6 @@ function runProcess(func)
     local co = coroutine.create(func)
     local success, errorMsg = coroutine.resume(co)
 	if not success then
-        error("[Lua Error] "..debug.traceback())
 		error("[Lua Error] "..errorMsg)
 	end
 	return success, co
@@ -116,7 +114,6 @@ function signal(signalName)
     for _, co in ipairs(threads) do
         local success, errorMsg = coroutine.resume(co)
 		if not success then
-            error("[Lua Error] "..debug.traceback())
 			error("[Lua Error] "..errorMsg)
 		end
     end
@@ -152,7 +149,6 @@ function Internal_runProcess(file, pid, func)
     local co = coroutine.create(func)
     local success, errorMsg = coroutine.resume(co)
 	if not success then
-        error("[Lua Error] "..debug.traceback())
 		error("[Lua Error] "..errorMsg)
 	end
     if (file == "-") and (pid == 1) then
