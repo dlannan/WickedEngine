@@ -105,13 +105,13 @@ namespace wi::lua
 			"	success, co = Internal_runProcess(script_file(), script_pid(), func);"
 			"	return success, co;"
 			"end;"
-			"if _ENV = _ENV or {}"
+			"_ENV = _ENV or { PROCESSES_DATA = {} };"
 			"if _ENV.PROCESSES_DATA[script_pid()] == nil then"
 			"	_ENV.PROCESSES_DATA[script_pid()] = { _INITIALIZED = -1 }"
 			"end;"
 			"if _ENV.PROCESSES_DATA[script_pid()]._INITIALIZED < 1 then"
-			"	_ENV.PROCESSES_DATA[script_pid()]._INITIALIZED = _ENV.PROCESSES_DATA[script_pid()]._INITIALIZED + 1"
-			"end";
+			"	_ENV.PROCESSES_DATA[script_pid()]._INITIALIZED = _ENV.PROCESSES_DATA[script_pid()]._INITIALIZED + 1;"
+			"end;";
 
 		// Make sure the file path doesn't contain backslash characters, replace them with forward slash.
 		//	- backslash would be recognized by lua as escape character

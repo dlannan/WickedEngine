@@ -266,10 +266,10 @@ GradientType = {
 }
 GradientFlags = {
 	None = 0,
-	Inverse = 1 << 0,	
-	Smoothstep = 1 << 1,
-	PerlinNoise = 1 << 2,
-	R16Unorm = 1 << 3,
+	Inverse = bit.lshift(1, 0),	
+	Smoothstep = bit.lshift(1, 1),
+	PerlinNoise = bit.lshift(1, 2),
+	R16Unorm = bit.lshift(1, 3),
 }
 )");
 		}
